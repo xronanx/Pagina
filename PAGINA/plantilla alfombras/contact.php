@@ -54,6 +54,7 @@
                            $result=$cit->agregar();
                            if($result>0){
                               $result = '<div class="result_ok">Mensaje Enviado Satisfactoriamente </div>';
+							  mail($_POST['email'],"Comprobante",$id_cita,$from);
                                $cit->Upsecqnos();
                            }else{
                               $result = '<div class="result_fail">Hubo un error al enviar el mensaje <img src="http://web.tursos.com/wp-includes/images/smilies/icon_sad.gif" alt=":(" class="wp-smiley"> </div>';
