@@ -18,8 +18,8 @@
             $error7 = '<span class="error">Ingrese un mensaje</span>';
         }else{
             $from = "From: ".$_POST['email']; 
-            $mail = "xronanx@gmail.com";
-			$subject = $_POST["nombre"];
+            $mail = "clientes.alfinte@gmail.com";
+			$subject = "El Cliente ".$_POST["nombre"]." Consulta la Siguiente Informacion";
             $message = $_POST["mensaje"];
 			
 			mail($mail,$subject,$message,$from);            
@@ -54,7 +54,8 @@
                            $result=$cit->agregar();
                            if($result>0){
                               $result = '<div class="result_ok">Mensaje Enviado Satisfactoriamente </div>';
-							  mail($_POST['email'],"Comprobante",$id_cita,$from);
+							 $contacto = "Su Numero de Cita es ".$id_cita." En Breve se comunicara uno de nuestros vendedores para arreglar una cita";
+							 mail($_POST['email'],"Comprobante de Contacto",$contacto,$from);
                                $cit->Upsecqnos();
                            }else{
                               $result = '<div class="result_fail">Hubo un error al enviar el mensaje <img src="http://web.tursos.com/wp-includes/images/smilies/icon_sad.gif" alt=":(" class="wp-smiley"> </div>';
