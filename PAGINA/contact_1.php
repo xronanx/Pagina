@@ -11,12 +11,12 @@
         }else if($_POST['mensaje'] == ''){
             $error7 = '<span class="error">Ingrese un mensaje</span>';
         }else{
-            $from = "From: ".$_POST['email']."\r\n"; 
-            $mail = "xronanx@gmail.com"."\r\n";
-			$subject = $_POST["nombre"]."\r\n";
-            $message = $_POST["mensaje"]."\r\n";
+            $from = "From: ".$_POST['email']; 
+            $mail = "j.rivasluna@gmail.com";
+			$subject = "El Cliente ".$_POST["nombre"]." Consulta la Siguiente Informacion";
+            $message = "Esta interesado en nuestro producto : ".$_POST["mensaje"];
 			
-			mail($mail,$subject,$message);            
+			mail($mail,$subject,$message,$from);         
             
            /**********************************************************************/
 
@@ -153,7 +153,7 @@ info@alfinte.com</a></dd>
 							  <label><span class="text-form">Email:</span><input type='text' 	class='email' name='email' value='<?php if(isset($_POST['email'])){ $_POST['email']; } ?>'><?php if(isset($errors)){ echo $errors[5]; } ?></label>
                               
                               <div class="wrapper">
-                                <div class="text-form">Solicitud:</div>
+                                <div class="text-form">Tipo de Producto:</div>
                                 <div class="extra-wrap">
                                     <select name="mensaje">
                                        <option value='no' selected>-Seleccione Tipo de Producto-</option>
@@ -163,6 +163,15 @@ info@alfinte.com</a></dd>
 									   
                                         
                                     </select>
+								<div class="wrapper">
+                                <div class="text-form">Comentario:</div>
+                               
+                                    <textarea rows='6' class='mensaje' name='mensaje'><?php if(isset($_POST['mensaje'])){ $_POST['mensaje']; } ?></textarea><?php if(isset($errors)){ echo $errors[7]; } ?>
+                                    <div class="clear"></div>
+                                   
+            
+                                </div>
+                                 	
                                     
                                     
                                     
