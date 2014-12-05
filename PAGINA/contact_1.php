@@ -15,8 +15,8 @@
         }else{
             $from = "From: ".$_POST['email']; 
             $mail = "j.rivasluna@gmail.com";
-			$subject = "El Cliente ".$_POST["nombre"]." Consulta la Siguiente Informacion";
-            $message = "Esta interesado en nuestro producto : ".$_POST["mensaje"];
+			$subject = "El Cliente ".$_POST["nombre"]." Consulta la Siguiente Informacion Acerca de ".$_POST['tipo_producto'];
+            $message = "Esta interesado en consultar : ".$_POST["mensaje"];
 			
 			mail($mail,$subject,$message,$from);         
             
