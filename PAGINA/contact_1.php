@@ -7,16 +7,21 @@
             $error1 = '<span class="error">Ingrese su nombre</span>';
         }else if($_POST['email'] == '' or !preg_match("/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/",$_POST['email'])){
             $error5 = '<span class="error">Ingrese un email correcto</span>';
+<<<<<<< HEAD
         
         }else if($_POST['tipo_producto'] == ''){
         
+=======
+>>>>>>> origin/master
         }else if($_POST['mensaje'] == ''){
             $error7 = '<span class="error">Ingrese un mensaje</span>';
+		}else if($_POST['producto'] == ''){
+            $error3 = '<span class="error">Ingrese su Direccion</span>';	
         }else{
             $from = "From: ".$_POST['email']; 
-            $mail = "j.rivasluna@gmail.com";
-			$subject = "El Cliente ".$_POST["nombre"]." Consulta la Siguiente Informacion";
-            $message = "Esta interesado en nuestro producto : ".$_POST["mensaje"];
+            $mail = "xronanx@gmail.com";
+			$subject = "El Cliente ".$_POST["nombre"]." Consulta por el siguiente producto : ".$_POST['producto'];
+            $message = "Esta interesado en nuestro producto con la siguiente descripcion : ".$_POST["mensaje"];
 			
 			mail($mail,$subject,$message,$from);         
             
@@ -157,7 +162,11 @@ info@alfinte.com</a></dd>
                               <div class="wrapper">
                                 <div class="text-form">Tipo de Producto:</div>
                                 <div class="extra-wrap">
+<<<<<<< HEAD
                                     <select name="tipo_producto">
+=======
+                                    <select name="producto">
+>>>>>>> origin/master
                                        <option value='no' selected>-Seleccione Tipo de Producto-</option>
                                        <option value='cortina' selected>Cortina</option>
 									   <option value='alfombra'>Alfombra</option>
