@@ -8,6 +8,8 @@
         }else if($_POST['email'] == '' or !preg_match("/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/",$_POST['email'])){
             $error5 = '<span class="error">Ingrese un email correcto</span>';
         
+        }else if($_POST['tipo_producto'] == ''){
+        
         }else if($_POST['mensaje'] == ''){
             $error7 = '<span class="error">Ingrese un mensaje</span>';
         }else{
@@ -41,7 +43,7 @@
                            $cit->email=$_POST['email'];
                            $cit->id_canal=1;
                            $cit->id_estado=1;
-                           $cit->comentario=$_POST['mensaje'];
+                           $cit->comentario=$_POST['mensaje'] .$_POST['tipo_producto'];
                            $cit->id_empleado=4;
 
                            $result=$cit->agregar();
@@ -155,7 +157,7 @@ info@alfinte.com</a></dd>
                               <div class="wrapper">
                                 <div class="text-form">Tipo de Producto:</div>
                                 <div class="extra-wrap">
-                                    <select name="mensaje">
+                                    <select name="tipo_producto">
                                        <option value='no' selected>-Seleccione Tipo de Producto-</option>
                                        <option value='cortina' selected>Cortina</option>
 									   <option value='alfombra'>Alfombra</option>
